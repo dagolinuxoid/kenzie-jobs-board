@@ -25,11 +25,12 @@ body
     height: 4px
     background-image: linear-gradient(90deg, $highlight_1, $highlight_1 25%, $highlight_2 25%, $highlight_2 50%, $highlight_3 50%, $highlight_3 75%, $highlight_4 75%)
     background-size: 50%
-    margin-bottom: 2em
+    margin-bottom: 1em
 .main-header
     display: flex
     align-items: center
     padding: 1em
+    margin-bottom: 1em
 .logo
     width: 70px
 .logo-title
@@ -48,6 +49,8 @@ body
         font-size: .9em
         color: $main
         text-decoration: none
+    &__link:hover, &__link:focus
+        color: $highlight_3
     &__link--active
         font-weight: 900
 
@@ -147,3 +150,33 @@ body
     font-size: .8em
     font-weight: 800
     margin-bottom: 1.2em
+
+.load-more
+    text-align: center
+    &__btn
+        border: 2px solid $highlight_4
+        padding: .5em 1.5em
+        outline: none
+        background: transparent
+        border-radius: 1.5em
+        color: $highlight_4
+        transition: .2s
+        &:hover
+            border: 2px solid $main
+            color: $main
+
+@media (max-width: 645px)
+    .main-header
+        text-align: center
+        display: block
+        margin-bottom: 0
+        padding: 0
+    .categories
+        justify-content: space-between
+        &__link
+            padding: 0
+@media (max-width: 475px)
+    .job__category
+        display: none
+    .job__title
+        font-size: 1em
