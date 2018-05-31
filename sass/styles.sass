@@ -1,6 +1,7 @@
 $main: #34314c
 $secondary: #9592ad
 $border: #d9dee9
+$white: #fff
 
 $highlight_1: #fd7473 // Red color
 $highlight_2: #fec951 // Yellow color
@@ -21,7 +22,7 @@ body
     padding: 0 1em 3em
     margin: 0 auto
 .border
-    height: 6px
+    height: 4px
     background-image: linear-gradient(90deg, $highlight_1, $highlight_1 25%, $highlight_2 25%, $highlight_2 50%, $highlight_3 50%, $highlight_3 75%, $highlight_4 75%)
     background-size: 50%
     margin-bottom: 2em
@@ -32,8 +33,9 @@ body
 .logo
     width: 70px
 .logo-title
-    margin-left: 1em
-    font-size: 1.4em
+    margin-left: .5em
+    font-size: 1.2em
+    text-transform: uppercase
     span
         font-weight: 300
 .categories
@@ -48,3 +50,100 @@ body
         text-decoration: none
     &__link--active
         font-weight: 900
+
+.jobs
+    position: relative
+    &::before
+        content: ""
+        top: 0
+        bottom: 0
+        border-left: 2px $border solid
+        position: absolute
+        left: 2.5em
+.job
+    transition: .3s
+    border: 1px $border solid
+    border-radius: 5px
+    display: flex
+    align-items: center
+    padding: 1em 1.5em 1em 1em 
+    text-decoration: none
+    margin-bottom: 1em
+    position: relative
+    z-index: 2
+    background: $white
+    &:hover
+        cursor: pointer
+        box-shadow: 0 2px 40px 0 rgba(0,0,0, .1) 
+    &__picture
+        width: 50px
+    &__info
+        margin-left: 1em
+    &__title
+        font-size: 1.3em
+        margin: 0
+        color: $main
+    &__descr
+        font-size: .7em
+        color: $secondary
+        display: flex
+        list-style: none
+        margin: 0
+        padding-left: 0
+        justify-content: space-between
+    .decor
+        margin: 0 2em
+        position: relative
+        &::before
+            left: -1em
+        &::after
+            right: -1em
+        &::before, &::after
+            content: '\00b7'
+            position: absolute
+            top: 50%
+            line-height: 0
+    &__category
+        margin-left: auto
+        text-transform: uppercase
+        font-size: .8em
+        font-weight: bold
+        position: relative
+        &::before
+            content: ''
+            display: block
+            width: 10px
+            height: 10px
+            position: absolute
+            left: -1.2em
+            top: .2em
+            border-radius: 100%
+        &--full-time
+            color: $highlight_1
+            &::before
+                background: $highlight_1
+        &--part-time
+            color: $highlight_2
+            &::before
+                background: $highlight_2
+        &--freelance
+            color: $highlight_3
+            &::before
+                background: $highlight_3
+        &--contract
+            color: $highlight_4
+            &::before
+                background: $highlight_4
+.date
+    padding: .4em 0
+    width: 80px
+    background: $white
+    position: relative
+    z-index: 3
+    border-radius: 2em 
+    border: 1px $border solid
+    text-align: center
+    font-family: ubuntu, serif
+    font-size: .8em
+    font-weight: 800
+    margin-bottom: 1.2em
